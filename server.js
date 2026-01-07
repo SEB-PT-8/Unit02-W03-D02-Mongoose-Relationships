@@ -48,7 +48,7 @@ connectToDB() // connect to database
 
 
 // Routes go here
-app.use('/',authorRoutes)
+app.use('/authors',authorRoutes)
 
 
 
