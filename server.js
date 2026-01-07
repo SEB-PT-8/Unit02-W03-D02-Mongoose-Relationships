@@ -4,7 +4,7 @@ const app = express() // creates a express application
 const dotenv = require("dotenv").config() //this allows me to use my .env values in this file
 const mongoose = require("mongoose")
 const morgan = require('morgan')
-
+const authorRoutes = require('./controllers/author.routes')
 
 app.use(express.static('public')) // my app will serve all static files from public folder
 app.use(express.urlencoded({ extended: false }));
