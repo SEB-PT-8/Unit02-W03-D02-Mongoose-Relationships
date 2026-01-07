@@ -15,4 +15,17 @@ router.post('/create', async (req,res)=>{
 })
 
 
+router.get('/',async (req,res)=>{
+    const allBooks = await Book.find().populate('author')
+    console.log(allBooks)
+    res.render('book-list.ejs',{allBooks: allBooks})
+})
+
+// Exercise 1:
+// 1. create a route for /books
+// 2. get all the books from the database .find()
+// 3. pass it to the ejs page and display the book information on the page
+// 4. displya book title and price
+// 5. create book-list.ejs page
+
 module.exports = router
