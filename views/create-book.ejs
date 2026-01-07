@@ -15,10 +15,11 @@
         <label for="">Price:</label>
         <input type="text">
 
+        <label for="">Author: </label>
         <select name="author" id="">
-            <option value="">Ebrahim</option>
-            <option value="">Omar</option>
-            <option value="">Mohammad</option>
+            <% allAuthors.forEach((oneAuthor)=>{ %>
+                <option value="<%= oneAuthor._id %>"> <%= oneAuthor.name %> </option>
+            <% }) %>
         </select>
     </form>
 </body>
