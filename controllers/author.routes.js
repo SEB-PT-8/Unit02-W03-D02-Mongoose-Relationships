@@ -6,5 +6,10 @@ router.get('/create',(req,res)=>{
 })
 
 
+router.post('/create', async(req,res)=>{
+    const createdAuthor = await Author.create(req.body)
+    res.redirect('/authors/create')
+})
+
 
 module.exports = router
