@@ -11,7 +11,9 @@
     <% allBooks.forEach((oneBook)=>{ %>
         <p>Title: <%= oneBook.title %> </p>
         <p>price: <%= oneBook.price %> </p>
+       
         <p>Author: <%= oneBook.author.name %></p>
+        <a href="/books/<%= oneBook._id %>">Go to book details</a>
     <% }) %>
 </body>
 </html>

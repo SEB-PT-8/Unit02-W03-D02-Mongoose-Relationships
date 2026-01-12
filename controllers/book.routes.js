@@ -28,4 +28,10 @@ router.get('/',async (req,res)=>{
 // 4. displya book title and price
 // 5. create book-list.ejs page
 
+
+router.get('/:id',async (req,res)=>{
+    const foundBook = await Book.findById(req.params.id)
+    res.render('book-details.ejs',{foundBook: foundBook})
+})
+
 module.exports = router
