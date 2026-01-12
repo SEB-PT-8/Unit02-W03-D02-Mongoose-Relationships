@@ -31,7 +31,18 @@ router.get('/',async (req,res)=>{
 
 router.get('/:id',async (req,res)=>{
     const foundBook = await Book.findById(req.params.id)
+    console.log(foundBook)
     res.render('book-details.ejs',{foundBook: foundBook})
+})
+
+router.post('/:id/reviews',async (req,res)=>{
+    console.log(req.body)
+    const foundBook = await Book.findById(req.params.id)
+    foundBook.reviews.push(req.body)
+    console.log(foundBook)
+    foundBook.save()
+    res.redirect('/books/' + req.params.id)
+
 })
 
 module.exports = router

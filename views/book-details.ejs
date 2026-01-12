@@ -12,14 +12,20 @@
 
 
     <!-- form for adding new review -->
-    <form action="" method="post">
+    <form action="/books/<%= foundBook._id %>/reviews" method="post">
         <label for="">Review Body:</label>
-        <input type="text">
+        <input name="content" type="text">
 
         <label for="">Rating: </label>
-        <input type="number">
+        <input name="rating" type="number">
 
         <button>Add Review</button>
     </form>
+
+    <h2>Ratings</h2>
+    <% foundBook.reviews.forEach((oneReview)=>{ %>
+        <p><%= oneReview.content %></p>
+        <p>Rating: <%= oneReview.rating %></p>
+    <% }) %>
 </body>
 </html>
