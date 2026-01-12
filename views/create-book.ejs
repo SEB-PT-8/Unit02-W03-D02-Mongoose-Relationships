@@ -16,7 +16,7 @@
         <input name="price" type="text">
 
         <label for="">Author: </label>
-        <select multiple name="author" id="">
+        <selectd name="author" id="">
             <% allAuthors.forEach((oneAuthor)=>{ %>
                 <option value="<%= oneAuthor._id %>"> <%= oneAuthor.name %> </option>
             <% }) %>

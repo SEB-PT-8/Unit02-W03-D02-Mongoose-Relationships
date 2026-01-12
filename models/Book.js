@@ -12,10 +12,10 @@ const ratingSchema = new mongoose.Schema({
 const bookSchema = new mongoose.Schema({
     title: String,
     price: Number,
-    author:[{
+    author:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Author'
-    }],
+    },
     reviews: [ratingSchema]
 })
 
